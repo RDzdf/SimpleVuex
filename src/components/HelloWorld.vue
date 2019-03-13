@@ -10,12 +10,27 @@
         <product></product>
       </li>
     </ul>
+    <ul>
+      <li>
+        <study-state></study-state>
+      </li>
+    </ul>
+    <ul>
+      <li>
+        <h1>Getters以及它的辅助函数mapGetters </h1>
+      </li>
+    </ul>
+    <div style="padding-left: 300px;text-align: left;">
+      <study-getters></study-getters>
+    </div>
   </div>
 </template>
 
 <script>
 import cart from '../components/cart.vue'
 import product from '../components/product.vue'
+import studyState from '../components/studyState.vue'
+import studyGetters from '../components/studyGetters.vue'
 export default {
   name: 'HelloWorld',
   data() {
@@ -25,7 +40,9 @@ export default {
   },
   components: {
     cart,
-    product
+    product,
+    studyState,
+    studyGetters
   }
 }
 </script>

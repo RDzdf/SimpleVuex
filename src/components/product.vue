@@ -7,11 +7,20 @@
 </template>
 
 <script>
+import { mapState } from 'vuex'
 export default {
   data() {
     return {
     }
   },
+  // 辅助函数
+  computed: mapState([
+    'num',
+    'str',
+    'arr',
+    'form'
+  ])
+  ,
   methods: {
     reduce() {
       this.$store.commit('reduce')
