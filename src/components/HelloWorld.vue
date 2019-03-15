@@ -1,5 +1,5 @@
 <template>
-  <div class="hello">
+  <div class="hello" style="padding-bottom: 100px;">
     <h1>{{ msg }}</h1>
     <h2>下面是两个组件</h2>
     <ul>
@@ -23,6 +23,15 @@
     <div style="padding-left: 300px;text-align: left;">
       <study-getters></study-getters>
     </div>
+    
+    <ul>
+      <li>
+        <h1>Mutations以及它的辅助函数mapGetters </h1>
+      </li>
+    </ul>
+    <div style="padding-left: 300px;text-align: left;">
+      <study-mutations></study-mutations>
+    </div>
   </div>
 </template>
 
@@ -31,6 +40,7 @@ import cart from '../components/cart.vue'
 import product from '../components/product.vue'
 import studyState from '../components/studyState.vue'
 import studyGetters from '../components/studyGetters.vue'
+import studyMutations from '../components/studyMutations.vue'
 export default {
   name: 'HelloWorld',
   data() {
@@ -42,7 +52,8 @@ export default {
     cart,
     product,
     studyState,
-    studyGetters
+    studyGetters,
+    studyMutations
   }
 }
 </script>
