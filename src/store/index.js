@@ -5,7 +5,8 @@ import study from './modules/study'
 import moduleA from './modules/moduleA'
 import {
   SET_NAME,
-  SET_AGE
+  SET_AGE,
+  SET_HEIGHT
 } from './mutation-types' // 引入常量
 
 Vue.use(Vuex) // 显式地通过 Vue.use() 来安装 Vuex
@@ -27,6 +28,7 @@ export default new Vuex.Store({
     form: {
       name: null,
       age: null,
+      height: null
     }
   },
   getters: {
@@ -76,6 +78,47 @@ export default new Vuex.Store({
       setTimeout(() => {
         Vue.set(state.form, 'age', 34)
       }, 1200)
+    },
+    // 尝试Actions异步
+    [SET_HEIGHT](state, height) {
+      Vue.set(state.form, 'height', height)
+    },
+  },
+  actions: {
+    setHeight (context, form) {
+      // context 你就理解成actions可以传入一个参数就是store本身(虽然并不是本身)。包含里面的state,getter,mutation,action
+      context.commit('SET_HEIGHT', form.height)
+      setTimeout(() => {
+        context.commit('SET_HEIGHT', 180)
+      }, 500)
+      setTimeout(() => {
+        context.commit('SET_HEIGHT', 185)
+      }, 1000)
+    },
+    // actions触发mutations的increment
+    increment({commit, state}) {
+      commit('increment', state)
+    },
+    // mutation中的SET_NAME
+    setName({commit, state}, form) {
+      commit('SET_NAME', form) 
+    },
+    // 组合 Action
+    actionA ({ commit }) {
+      return new Promise((resolve, reject) => {
+        setTimeout(() => {
+          commit('increment')
+          resolve()
+        }, 1000)
+      })
+    },
+    // 你甚至还能这么玩
+    actionB ({ dispatch, commit }) {
+      return dispatch('actionA').then(() => {
+        setTimeout(() => {
+          commit('add', 10)
+        }, 1000)
+      })
     }
   },
   modules: {

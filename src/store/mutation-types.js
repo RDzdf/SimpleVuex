@@ -7,3 +7,4 @@
 // eg： 修改姓名
 export const SET_NAME = 'SET_NAME' // 修改姓名
 export const SET_AGE = 'SET_AGE' // 修改年龄
+export const SET_HEIGHT = 'SET_HEIGHT' // 修改身高

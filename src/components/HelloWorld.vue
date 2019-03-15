@@ -26,11 +26,21 @@
     
     <ul>
       <li>
-        <h1>Mutations以及它的辅助函数mapGetters </h1>
+        <h1>Mutations以及它的辅助函数mapMutations </h1>
       </li>
     </ul>
     <div style="padding-left: 300px;text-align: left;">
       <study-mutations></study-mutations>
+    </div>
+
+    
+    <ul>
+      <li>
+        <h1>Ations以及它的辅助函数mapActions </h1>
+      </li>
+    </ul>
+    <div style="padding-left: 300px;text-align: left;">
+      <study-actions></study-actions>
     </div>
   </div>
 </template>
@@ -41,6 +51,7 @@ import product from '../components/product.vue'
 import studyState from '../components/studyState.vue'
 import studyGetters from '../components/studyGetters.vue'
 import studyMutations from '../components/studyMutations.vue'
+import studyActions from '../components/studyActions.vue'
 export default {
   name: 'HelloWorld',
   data() {
@@ -53,7 +64,8 @@ export default {
     product,
     studyState,
     studyGetters,
-    studyMutations
+    studyMutations,
+    studyActions
   }
 }
 </script>

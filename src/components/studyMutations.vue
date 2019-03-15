@@ -27,6 +27,7 @@
 </template>
 
 <script>
+import { mapMutations } from 'vuex'
 export default {
   data() {
     return {
@@ -42,13 +43,25 @@ export default {
   computed: {
   },
   methods: {
+    /* 辅助函数
+    ...mapMutations([
+      'increment', // 将 `this.increment()` 映射为 `this.$store.commit('increment')`
+
+      // `mapMutations` 也支持载荷：
+      'addObj' // 将 `this.addObj(obj)` 映射为 `this.$store.commit('addObj', obj)`
+    ]),
+    
+    ...mapMutations({
+      add: 'increment' // 将 `this.add()` 映射为 `this.$store.commit('increment')`
+    })
+    */
     // 调用它必须使用store.commit
     increment() {
       this.$store.commit('increment')
     },
     // Payload(提交载荷)， 大白话就是可以传参
     add(num) {
-      // this.$store.commit('add', num)
+      this.$store.commit('add', num)
     },
     // 传一个对象参数解决多参数问题
     addObj(obj) {
