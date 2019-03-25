@@ -12,12 +12,7 @@
     </ul>
     <ul>
       <li>
-        <study-state></study-state>
-      </li>
-    </ul>
-    <ul>
-      <li>
-        <h1>Getters以及它的辅助函数mapGetters </h1>
+        
       </li>
     </ul>
     <div style="padding-left: 300px;text-align: left;">

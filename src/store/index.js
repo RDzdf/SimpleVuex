@@ -3,11 +3,14 @@ import Vuex from 'vuex'
 import cart from './modules/cart'
 import study from './modules/study'
 import moduleA from './modules/moduleA'
+import studyModel from './modules/studyModel'
 import {
   SET_NAME,
   SET_AGE,
   SET_HEIGHT
 } from './mutation-types' // 引入常量
+import { strictEqual } from 'assert';
+import { stat } from 'fs';
 
 Vue.use(Vuex) // 显式地通过 Vue.use() 来安装 Vuex
 
@@ -29,12 +32,14 @@ export default new Vuex.Store({
       name: null,
       age: null,
       height: null
-    }
+    },
+    num: 10
   },
   getters: {
     showElement: state => {
       return state.array.filter(ele => ele.display)
     },
+    form: state => state.form,
     // getters可以作为第二参数
     showLength: (state, getters) => {
       return getters.showElement.length
@@ -58,9 +63,13 @@ export default new Vuex.Store({
     addObj(state, obj) {
       state.count += Number(obj.num)
     },
+    addList(state, arr) {
+      state.array.push(arr)
+    },
     // 当使用对象风格的提交方式，整个对象都作为载荷传给 mutation 函数
     addByType(state, payload) {
       state.count += payload.amount
+      state.name = payload.name
     },
     // 使用常量
     [SET_NAME](state, form) {
@@ -124,6 +133,7 @@ export default new Vuex.Store({
   modules: {
     cart,
     study,
-    moduleA
+    moduleA,
+    studyModel
   }
 })
