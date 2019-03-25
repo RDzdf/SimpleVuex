@@ -1,41 +1,14 @@
 <template>
-  <div class="hello" style="padding-bottom: 100px;">
+  <div class="hello" style="padding-bottom: 100px;text-align: center;">
     <h1>{{ msg }}</h1>
-    <h2>下面是两个组件</h2>
-    <ul>
-      <li>
+    <h2>最简单的一个例子</h2>
+    <div class="row">
+      <div class="col-12">
         <cart></cart>
-      </li>
-      <li>
+      </div>
+      <div class="col-12">
         <product></product>
-      </li>
-    </ul>
-    <ul>
-      <li>
-        
-      </li>
-    </ul>
-    <div style="padding-left: 300px;text-align: left;">
-      <study-getters></study-getters>
-    </div>
-    
-    <ul>
-      <li>
-        <h1>Mutations以及它的辅助函数mapMutations </h1>
-      </li>
-    </ul>
-    <div style="padding-left: 300px;text-align: left;">
-      <study-mutations></study-mutations>
-    </div>
-
-    
-    <ul>
-      <li>
-        <h1>Ations以及它的辅助函数mapActions </h1>
-      </li>
-    </ul>
-    <div style="padding-left: 300px;text-align: left;">
-      <study-actions></study-actions>
+      </div>
     </div>
   </div>
 </template>
@@ -43,10 +16,6 @@
 <script>
 import cart from '../components/cart.vue'
 import product from '../components/product.vue'
-import studyState from '../components/studyState.vue'
-import studyGetters from '../components/studyGetters.vue'
-import studyMutations from '../components/studyMutations.vue'
-import studyActions from '../components/studyActions.vue'
 export default {
   name: 'HelloWorld',
   data() {
@@ -56,29 +25,7 @@ export default {
   },
   components: {
     cart,
-    product,
-    studyState,
-    studyGetters,
-    studyMutations,
-    studyActions
+    product
   }
 }
 </script>
-
-<style scoped>
-h1,
-h2 {
-  font-weight: normal;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
-}
-</style>

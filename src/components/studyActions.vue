@@ -1,5 +1,6 @@
 <template>
-  <div>
+  <div style="text-align: center;">
+    <h1>Actions和他的辅助函数mapActions</h1>
     输入身高：<input type="text" v-model="form.height"><button @click="setHeight(form)">提交</button> <br> <br>
     state.form.height = {{this.$store.state.form.height}} <br><br>
     <p>mapActions映射</p>

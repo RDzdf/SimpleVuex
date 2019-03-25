@@ -21,6 +21,7 @@
       </li>
     </ul>
     <p class="logo"><img src="./assets/logo.png"></p>
+    <p class="logo"><a href="https://www.jianshu.com/p/b0fce9a97485">链接：一个简单的vuex学习项目(作者简书针对此项目的记录）</a></p>
     <router-view />
   </div>
 </template>
@@ -40,6 +41,9 @@ export default {
   margin: 0 auto;
   color: #2c3e50;
   margin-top: 60px;
+}
+h1, h2{
+  text-align: center;
 }
 .nav-bar {
   height: 42px;
@@ -72,6 +76,7 @@ pre {
   font-size: 14px;
   overflow: auto;
   font-family: auto;
+  text-align: left;
 }
 .row .col-12 {
   width: 48%;

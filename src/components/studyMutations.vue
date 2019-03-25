@@ -1,5 +1,6 @@
 <template>
   <div>
+    <h1>Mutations以及它的辅助函数mapMutations</h1>
     <b>通过Mutations触发状态更改： </b> <br><br>
     state.count++ <button @click="increment()">加一</button> <br>
     state.count = {{this.$store.state.count}} <br>
