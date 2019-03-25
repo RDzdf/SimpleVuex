@@ -15,12 +15,16 @@
       <pre>{{ $store.state.studyModel.form }}</pre>
     </div>
     <br><br><br><br>
+    
+    <h1>vuex-map-fields一个处理双向绑定的插件</h1>
+    <map-fields></map-fields>
   </div>
 </template>
 
 <script>
 import { createNamespacedHelpers } from 'vuex'
 const { mapState, mapGetters, mapActions } = createNamespacedHelpers('studyModel')
+import mapFields from '@/page/vuex-map-fields/moduleA.vue'
 export default {
   computed: {
     ...mapGetters(['form'])
@@ -29,6 +33,9 @@ export default {
     ...mapActions([
       'setForm'
     ])
+  },
+  components: {
+    mapFields
   },
   watch: {
     'form': {

@@ -4,6 +4,7 @@ import cart from './modules/cart'
 import study from './modules/study'
 import moduleA from './modules/moduleA'
 import studyModel from './modules/studyModel'
+import fooModule from './modules/fooModule'
 import {
   SET_NAME,
   SET_AGE,
@@ -134,6 +135,7 @@ export default new Vuex.Store({
     cart,
     study,
     moduleA,
-    studyModel
+    studyModel,
+    fooModule
   }
 })
