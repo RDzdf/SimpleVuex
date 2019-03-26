@@ -40,6 +40,11 @@ export default new Router({
       path: '/studyModel',
       name: 'studyModel',
       component: () => import('@/components/studyModel')
+    },
+    {
+      path: '/ES6',
+      name: 'ES6',
+      component: () => import('@/page/ECMAScript6/array')
     }
   ]
 })
